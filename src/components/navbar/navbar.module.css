@@ -1,0 +1,74 @@
+.main {
+  background-color: rgb(0, 0, 100);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbarWrapper {
+  width: 1100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+.logo {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 25px;
+}
+.logo svg {
+  height: 30px;
+  fill: white;
+}
+.logo h2 {
+  color: white;
+}
+.logo:hover {
+  background-color: rgb(187, 187, 212);
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+}
+.content a {
+  text-decoration: none;
+  font-size: 18px;
+}
+.login {
+  color: white;
+  padding: 6px 20px;
+  border-radius: 10px;
+  border: 1px solid white;
+  font-weight: 400;
+}
+.login:hover {
+  color: rgb(0, 0, 100);
+  background-color: rgb(187, 187, 212);
+  padding: 7px 21px;
+  border-radius: 10px;
+  border: none;
+}
+.register {
+  color: rgb(0, 0, 100);
+  background-color: white;
+  padding: 7px 21px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+.register:hover {
+  color: white;
+  padding: 6px 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(187, 187, 212);
+  font-weight: 400;
+  background-color: rgb(187, 187, 212);
+}
