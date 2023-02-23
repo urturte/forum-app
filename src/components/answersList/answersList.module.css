@@ -18,3 +18,11 @@
   align-items: center;
   gap: 10px;
 }
+@media only screen and (max-width: 800px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+  }
+}
