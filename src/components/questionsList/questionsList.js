@@ -10,7 +10,6 @@ const QuestionsList = () => {
 
     const questions = await result.json();
     setQuestions(questions);
-    console.log(questions);
   };
   useEffect(() => {
     fetchQuestions();

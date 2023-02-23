@@ -7,14 +7,11 @@ const AnswerForm = (question) => {
   const [content, setContent] = useState();
   const onClickHandler = async () => {
     const token = window.localStorage.token;
-    console.log("title", token);
     const questionId = question.question._id;
-    console.log("questionId", questionId);
     if (token) {
       const answerDetails = {
         content: content,
       };
-      console.log("questionDetails", answerDetails);
       await fetch(`http://localhost:8000/answer/${questionId}`, {
         method: "POST",
         headers: {
@@ -23,13 +20,9 @@ const AnswerForm = (question) => {
           Authorization: token,
         },
         body: JSON.stringify(answerDetails),
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          console.log("data", data);
-        });
+      }).then((res) => {
+        return res.json();
+      });
     } else {
       alert("Please login or sign up to ask a question!");
     }

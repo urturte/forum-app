@@ -7,14 +7,12 @@ import moment from "moment";
 const Question = ({ question }) => {
   const navigate = useNavigate();
   const onClickComponent = () => {
-    console.log(question._id);
     navigate(`/answers/${question._id}`);
   };
   const date = moment(question.dateCreated).fromNow();
 
   const token = window.localStorage.token;
   const handleDelete = () => {
-    console.log(question._id);
     const id = {
       id: question._id,
     };
@@ -26,13 +24,9 @@ const Question = ({ question }) => {
         Authorization: token,
       },
       body: JSON.stringify(id),
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log("data", data);
-      });
+    }).then((res) => {
+      return res.json();
+    });
     window.location.reload(false);
   };
   return (

@@ -5,13 +5,11 @@ import DeleteButton from "../deleteButton/deleteButton";
 
 const AnswersList = (allAnswers) => {
   const answers = allAnswers.allAnswers.questionAnswers;
-  console.log("answers", answers);
   const token = window.localStorage.token;
   const handleDelete = (answer) => {
     const id = {
       id: answer._id,
     };
-    console.log(id);
     fetch(`http://localhost:8000/answer/${answer._id}`, {
       method: "DELETE",
       headers: {
@@ -20,13 +18,9 @@ const AnswersList = (allAnswers) => {
         Authorization: token,
       },
       body: JSON.stringify(id),
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log("data", data);
-      });
+    }).then((res) => {
+      return res.json();
+    });
     window.location.reload(false);
   };
   return (

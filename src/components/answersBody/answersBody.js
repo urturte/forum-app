@@ -16,8 +16,6 @@ function AnswerBody() {
     });
 
     setAnswers(answers);
-    console.log("questionas", answers);
-    console.log("answeriai", answers[0].questionAnswers);
   };
   useEffect(() => {
     fetchAnswers();

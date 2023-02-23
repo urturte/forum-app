@@ -22,13 +22,9 @@ const RegisterForm = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(userInfo),
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-      });
+    }).then((res) => {
+      return res.json();
+    });
   };
   // useEffect(() => {
   //   onClickHandler();
