@@ -10,6 +10,7 @@ const QuestionsList = () => {
 
     const questions = await result.json();
     setQuestions(questions);
+    console.log(questions);
   };
   useEffect(() => {
     fetchQuestions();
@@ -21,10 +22,9 @@ const QuestionsList = () => {
       ) : (
         questions.map((question) => {
           return (
-            <Question
-              title={question.title}
-              dateCreated={question.dateCreated}
-            />
+            <div className={styles.content}>
+              <Question question={question} />
+            </div>
           );
         })
       )}

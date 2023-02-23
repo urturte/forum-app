@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./button.module.css";
+import styles from "./deleteButton.module.css";
 
-const button = ({ text, onClick }) => {
+const DeleteButton = ({ text, onClick }) => {
   return (
     <button onClick={() => onClick()} className={styles.main}>
       {text}
@@ -9,4 +9,4 @@ const button = ({ text, onClick }) => {
   );
 };
 
-export default button;
+export default DeleteButton;

@@ -3,4 +3,8 @@
   border: 1px gray solid;
   padding: 5px;
   width: 100%;
+  transition: 0.3s;
+}
+.main:hover {
+  border: 1px black solid;
 }
