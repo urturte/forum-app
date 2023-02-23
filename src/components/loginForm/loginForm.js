@@ -42,7 +42,7 @@ const LoginForm = () => {
         placeholder="Email..."
       />
       <Input
-        type="text"
+        type="password"
         onChange={setPassword}
         value={password}
         placeholder="Password..."
