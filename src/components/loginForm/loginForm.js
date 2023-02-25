@@ -9,13 +9,13 @@ const LoginForm = () => {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
-  const onClickHandler = async () => {
+  const onClickHandler = () => {
     const userInfo = {
       email: email,
       password: password,
     };
 
-    await fetch("http://localhost:8000/login", {
+    fetch("http://localhost:8000/login", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -28,6 +28,10 @@ const LoginForm = () => {
       })
       .then((data) => {
         window.localStorage.setItem("token", data.jwt_token);
+        return data.status;
+      })
+      .then((result) => {
+        alert(result);
       });
   };
   useEffect(() => {

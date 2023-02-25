@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./questionForm.module.css";
 import Button from "../button/button";
+import { logDOM } from "@testing-library/react";
 // import { useNavigate } from "react-router-dom";
 
 const QuestionForm = () => {
@@ -20,9 +21,13 @@ const QuestionForm = () => {
           Authorization: token,
         },
         body: JSON.stringify(questionDetails),
-      }).then((res) => {
-        return res.json();
-      });
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((result) => {
+          console.log(result);
+        });
     } else {
       alert("Please login or sign up to ask a question!");
     }

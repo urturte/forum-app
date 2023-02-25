@@ -30,7 +30,7 @@ const Question = ({ question }) => {
     window.location.reload(false);
   };
   return (
-    <div onClick={() => onClickComponent()} className={styles.main}>
+    <div className={styles.main} onClick={() => onClickComponent()}>
       <h1>{question.title}</h1>
       <div className={styles.rightContainer}>
         <h5>{date}</h5>
