@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./answersBody.module.css";
-import AnswerHeader from "../../components/answerHeader/answerHeader";
-import AnswersList from "../answersList/answersList";
-import AnswerForm from "../answerForm/answerForm";
+import AnswerHeader from "../../molecules/answerHeader/answerHeader";
+import AnswersList from "../../molecules/answersList/answersList";
+import AnswerForm from "../../molecules/answerForm/answerForm";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 

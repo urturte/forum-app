@@ -1,5 +1,5 @@
-import Navbar from "../../components/navbar/navbar";
-import LoginForm from "../../components/loginForm/loginForm";
+import Navbar from "../../components/organisms/navbar/navbar";
+import LoginForm from "../../components/molecules/loginForm/loginForm";
 import styles from "./login.module.css";
 
 function App() {

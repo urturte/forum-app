@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./questionForm.module.css";
-import Button from "../button/button";
-import { logDOM } from "@testing-library/react";
-// import { useNavigate } from "react-router-dom";
+import Button from "../../atoms/button/button";
+import { useNavigate } from "react-router-dom";
 
 const QuestionForm = () => {
   const [title, setTitle] = useState();
-  const onClickHandler = async () => {
+  const navigate = useNavigate();
+  const handleSubmit = () => {
     const token = window.localStorage.token;
 
     if (token) {
       const questionDetails = {
         title: title,
       };
-      await fetch("http://localhost:8000/question", {
+      const data = fetch("http://localhost:8000/question", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -28,14 +28,12 @@ const QuestionForm = () => {
         .then((result) => {
           console.log(result);
         });
+      navigate("/");
+      window.location.reload(false);
     } else {
       alert("Please login or sign up to ask a question!");
     }
   };
-
-  useEffect(() => {
-    onClickHandler();
-  }, []);
 
   return (
     <div className={styles.main}>
@@ -47,7 +45,7 @@ const QuestionForm = () => {
         onChange={(event) => setTitle(event.target.value)}
         value={title}
       ></textarea>
-      <Button text="Submit" onClick={onClickHandler} />
+      <Button text="Submit" onClick={handleSubmit} />
     </div>
   );
 };

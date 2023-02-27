@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./mainBody.module.css";
-import QuestionsList from "../questionsList/questionsList";
-import QuestionsHeader from "../questionsHeader/questionsHeader";
+import QuestionsList from "../../molecules/questionsList/questionsList";
+import QuestionsHeader from "../../molecules/questionsHeader/questionsHeader";
 
 const MainBody = () => {
   return (

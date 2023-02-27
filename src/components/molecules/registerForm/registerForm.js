@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import styles from "./registerForm.module.css";
-import Input from "../input/input";
-import Button from "../button/button";
+import Input from "../../atoms/input/input";
+import Button from "../../atoms/button/button";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const navigate = useNavigate();
 
-  const onClickHandler = async () => {
+  const handleRegister = async () => {
     const userInfo = {
       name: name,
       email: email,
@@ -22,13 +24,15 @@ const RegisterForm = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(userInfo),
-    }).then((res) => {
-      return res.json();
-    });
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((result) => {
+        console.log(result);
+      });
+    navigate("/login");
   };
-  // useEffect(() => {
-  //   onClickHandler();
-  // }, []);
   return (
     <div className={styles.main}>
       <Input
@@ -49,7 +53,7 @@ const RegisterForm = () => {
         value={password}
         placeholder="Password..."
       />
-      <Button text="Register" onClick={() => onClickHandler()} />
+      <Button text="Register" onClick={() => handleRegister()} />
       <h5>
         Already have an account?
         <a href="/login">Sign in</a>

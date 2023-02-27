@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./answerHeader.module.css";
-import Title from "../title/title";
+import Title from "../../atoms/title/title";
 import moment from "moment";
 
 const AnswerHeader = ({ question }) => {

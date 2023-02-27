@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./loginForm.module.css";
-import Input from "../input/input";
-import Button from "../button/button";
+import Input from "../../atoms/input/input";
+import Button from "../../atoms/button/button";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
-  const onClickHandler = () => {
+  const handleLogin = () => {
     const userInfo = {
       email: email,
       password: password,
@@ -33,10 +33,8 @@ const LoginForm = () => {
       .then((result) => {
         alert(result);
       });
+    navigate("/");
   };
-  useEffect(() => {
-    onClickHandler();
-  }, []);
   return (
     <div className={styles.main}>
       <Input
@@ -51,7 +49,7 @@ const LoginForm = () => {
         value={password}
         placeholder="Password..."
       />
-      <Button text="Login" onClick={() => onClickHandler()} />
+      <Button text="Login" onClick={() => handleLogin()} />
       <h5>
         Don't have an account?
         <a href="/register">Sign up</a>

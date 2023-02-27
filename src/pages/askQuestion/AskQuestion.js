@@ -1,6 +1,6 @@
-import Navbar from "../../components/navbar/navbar";
+import Navbar from "../../components/organisms/navbar/navbar";
 import styles from "./askQuestion.module.css";
-import QuestionForm from "../../components/questionForm/questionForm";
+import QuestionForm from "../../components/molecules/questionForm/questionForm";
 
 function App() {
   return (

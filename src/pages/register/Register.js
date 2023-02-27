@@ -1,5 +1,5 @@
-import Navbar from "../../components/navbar/navbar";
-import RegisterForm from "../../components/registerForm/registerForm";
+import Navbar from "../../components/organisms/navbar/navbar";
+import RegisterForm from "../../components/molecules/registerForm/registerForm";
 import styles from "./register.module.css";
 
 function App() {

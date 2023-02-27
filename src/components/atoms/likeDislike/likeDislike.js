@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./likeDislike.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const LikeDislike = () => {
   const [likes, setLikes] = useState(0);

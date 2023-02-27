@@ -1,5 +1,5 @@
-import Navbar from "../../components/navbar/navbar";
-import MainBody from "../../components/mainBody/mainBody";
+import Navbar from "../../components/organisms/navbar/navbar";
+import MainBody from "../../components/organisms/mainBody/mainBody";
 import styles from "../main/App.css";
 function Main() {
   return (

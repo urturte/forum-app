@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./answerForm.module.css";
-import Button from "../button/button";
-// import { useNavigate } from "react-router-dom";
+import Button from "../../atoms/button/button";
 
 const AnswerForm = (question) => {
   const [content, setContent] = useState();
@@ -23,14 +22,11 @@ const AnswerForm = (question) => {
       }).then((res) => {
         return res.json();
       });
+      window.location.reload(false);
     } else {
       alert("Please login or sign up to ask a question!");
     }
   };
-
-  useEffect(() => {
-    onClickHandler();
-  }, []);
 
   return (
     <div className={styles.main}>

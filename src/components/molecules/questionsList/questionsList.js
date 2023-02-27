@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./questionsList.module.css";
-import Question from "../question/question";
+import Question from "../../molecules/question/question";
 import { useState, useEffect } from "react";
 
 const QuestionsList = () => {
